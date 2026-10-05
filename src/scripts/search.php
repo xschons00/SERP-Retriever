@@ -16,7 +16,12 @@ if (empty($searchQuery)) {
 //////////////////////////////////////////////
 // Your Serper API Key                      //
 //////////////////////////////////////////////
-$apiKey = '91b06491c1e3ef8da8dfe0e53287ea4cb78b7c32';
+$secretFilePath = '/secrets/api-key';
+$apiKey = '';
+
+if (file_exists($secretFilePath) && is_readable($secretFilePath)) {
+    $apiKey = trim(file_get_contents($secretFilePath));
+}
 
 // Initialize API client and fetch results
 $apiClient = new ApiClient($apiKey);
