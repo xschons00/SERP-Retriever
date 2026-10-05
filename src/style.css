@@ -1,0 +1,203 @@
+/* Základné nastavenie štýlov */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    background-color: #f4f6f8;
+    padding: 40px 20px;
+}
+
+/* Kontajner formulára pre prvú stranu */
+.form-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    margin-top: 50px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-weight: 600;
+    color: #333;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.2s ease;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Kontajner výsledkov pre druhú stranu */
+.results-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 750px;
+}
+
+.results-header {
+    border-bottom: 1px solid #e1e4e8;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.back-link {
+    display: inline-block;
+    color: #007bff;
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.results-header h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.search-query-info {
+    color: #666;
+    font-size: 14px;
+}
+
+/* Sekcia s tlačidlami na stiahnutie */
+.download-container {
+    margin-bottom: 20px;
+    padding: 12px 15px;
+    background-color: #fafbfc;
+    border: 1px solid #e1e4e8;
+    border-radius: 6px;
+}
+
+.download-container form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.download-container span {
+    font-size: 14px;
+    font-weight: 600;
+    color: #444;
+    margin-right: 5px;
+}
+
+.download-btn {
+    background-color: #f1f3f4;
+    color: #1a0dab;
+    padding: 6px 12px;
+    border: 1px solid #dadce0;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.download-btn:hover {
+    background-color: #e8eaed;
+}
+
+/* Zoznam a karty výsledkov vyhľadávania */
+.results-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.result-card {
+    padding: 15px;
+    border: 1px solid #eef0f2;
+    border-radius: 6px;
+    background-color: #fafbfc;
+    transition: box-shadow 0.2s ease;
+}
+
+.result-card:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.result-url {
+    display: block;
+    font-size: 12px;
+    color: #006621;
+    margin-bottom: 4px;
+    word-break: break-all;
+}
+
+.result-title {
+    font-size: 18px;
+    margin-bottom: 6px;
+}
+
+.result-title a {
+    color: #1a0dab;
+    text-decoration: none;
+}
+
+.result-title a:hover {
+    text-decoration: underline;
+}
+
+.result-snippet {
+    font-size: 14px;
+    color: #4d5156;
+    line-height: 1.4;
+}
+
+.warning-text {
+    color: #d9534f;
+    background-color: #fdf7f7;
+    border: 1px solid #d9534f;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 14px;
+}
