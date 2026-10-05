@@ -16,8 +16,24 @@ if (empty($searchQuery)) {
 //////////////////////////////////////////////
 // Your Serper API Key                      //
 //////////////////////////////////////////////
-$secretFilePath = '/secrets/api-key';
-$apiKey = '';
+// Secret file location fallbacks for local Docker and Render environments
+$secretPaths = [
+    '/secrets/api-key',
+    '/etc/secrets/api-key',
+    __DIR__ . '/../../secrets/api-key'
+];
+
+$apiKey = getenv('SERPER_API_KEY') ?: '';
+
+// Attempt reading from secret file paths if environment variable is not set
+if (empty($apiKey)) {
+    foreach ($secretPaths as $singlePath) {
+        if (file_exists($singlePath) && is_readable($singlePath)) {
+            $apiKey = trim(file_get_contents($singlePath));
+            break;
+        }
+    }
+}
 
 if (file_exists($secretFilePath) && is_readable($secretFilePath)) {
     $apiKey = trim(file_get_contents($secretFilePath));
