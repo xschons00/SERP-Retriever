@@ -35,9 +35,6 @@ if (empty($apiKey)) {
     }
 }
 
-if (file_exists($secretFilePath) && is_readable($secretFilePath)) {
-    $apiKey = trim(file_get_contents($secretFilePath));
-}
 
 // Initialize API client and fetch results
 $apiClient = new ApiClient($apiKey);
