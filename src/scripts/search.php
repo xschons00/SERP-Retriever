@@ -34,7 +34,14 @@ if (empty($apiKey)) {
         }
     }
 }
-
+// Handle missing API key to prevent API failure
+if (empty($apiKey)) {
+    $_SESSION['searchQuery'] = $searchQuery;
+    $_SESSION['searchResults'] = [];
+    $_SESSION['searchError'] = 'API key error: Secret file is missing or unreadable.';
+    header("Location: ../result.php");
+    exit();
+}
 
 // Initialize API client and fetch results
 $apiClient = new ApiClient($apiKey);
