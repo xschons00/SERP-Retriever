@@ -91,11 +91,7 @@ A lightweight, containerized PHP application that performs web searches via the 
 
 ## Configuration
 
-The application uses the Serper.dev API to query Google search results. The API key is configured in `src/scripts/search.php`:
-
-```php
-$apiKey = 'your_serper_api_key_here';
-```
+The application uses the Serper.dev API to query Google search results. The API key needs to be located in /secrets/api-key or as an environment variable.
 
 > **Note:** To obtain an API key, register for a free account at [Serper.dev](https://serper.dev/).
 
